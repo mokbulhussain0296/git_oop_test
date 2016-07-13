@@ -22,7 +22,9 @@ class BankAccount implements IfaceBankAccount
 
     public function deposit(Money $amount)
     {
-        //implement this method
+
+        $this->balance=(string)$this->value+(string)$amount;
+        
     }
 
 
