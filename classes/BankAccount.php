@@ -31,7 +31,19 @@ class BankAccount implements IfaceBankAccount
     public function transfer(Money $amount, BankAccount $account)
     {
 
-         $withdrawl = $this->withdraw($amount);
+        
+        
+        if((string)$amount >(string)$this->balance)
+
+        {
+
+            throw new Exception("Withdrawl amount larger than balance");
+
+        }
+       
+        $account->balance =(string)$account->balance +(string)$amount;
+
+        $this->balance =(string)$this->balance -(string)$amount;
         
     }
 
